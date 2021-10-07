@@ -1,0 +1,181 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+  // Placeholders with the same ids are connected.
+  "ROS2 launch-template": {
+    "scope": "xml",
+    "prefix": "launch-scope",
+    "description": "ROS2 launch template",
+    "body": [
+      "<?xml version=\"1.0\"?>",
+      "<launch>",
+      "\t${0}",
+      "</launch>"
+    ]
+  },
+  "ROS2 launch-arg": {
+    "scope": "xml",
+    "prefix": "arg",
+    "description": "ROS argument",
+    "body": "<arg name=\"${1}\"/>\n$0",
+  },
+  "ROS2 launch-arg-default": {
+    "scope": "xml",
+    "prefix": "arg-default",
+    "description": "ROS argument with default",
+    "body": "<arg name=\"${1}\" default=\"${2}\"/>\n$0",
+  },
+  "ROS2 launch-include": {
+    "scope": "xml",
+    "prefix": "include",
+    "description": "include another launch file",
+    "body": [
+      "<include file=\"${1:$(find-pkg-share ${2:package_name})/}${3}\"/>\n$0"
+    ],
+  },
+  "ROS2 launch-group": {
+    "scope": "xml",
+    "prefix": "group-scope",
+    "description": "group scope",
+    "body": [
+      "<group>",
+      "\t${0}",
+      "</group>"
+    ],
+  },
+  "ROS2 launch-push-ns": {
+    "scope": "xml",
+    "prefix": "push-ros-namespace",
+    "description": "push-ros-namespace to set namespace of included nodes",
+    "body": [
+      "<push-ros-namespace namespace=\"${1:$(var ${2:name_ns})}\"/>\n$0"
+    ],
+  },
+  "ROS2 launch-node": {
+    "scope": "xml",
+    "prefix": "node",
+    "description": "node",
+    "body": [
+      "<node pkg=\"${1:package_name}\" exec=\"${2:exec_node}\" name=\"${3:node_name}\" namespace=\"${4}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-node-scope": {
+    "scope": "xml",
+    "prefix": "node-scope",
+    "description": "node with scope",
+    "body": [
+      "<node pkg=\"${1:package_name}\" exec=\"${2:exec_node}\" name=\"${3:node_name}\" namespace=\"${4}\">",
+      "\t$0",
+      "</node>",
+    ],
+  },
+  "ROS2 launch-node-env": {
+    "scope": "xml",
+    "prefix": "env-node",
+    "description": "sets an environment variable in node tags",
+    "body": [
+      "<env name=\"${1}\" value=\"${2:$(var ${3:NAME})}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-var-get": {
+    "scope": "xml",
+    "prefix": "$var",
+    "description": "get an argument variable",
+    "body": [
+      "$(var ${1:NAME})$0",
+    ],
+  },
+  "ROS2 launch-env-get": {
+    "scope": "xml",
+    "prefix": "$env",
+    "description": "get an environment variable",
+    "body": [
+      "$(env ${1:NAME} ${2:DEFAULT})$0",
+    ],
+  },
+  "ROS2 launch-env-set": {
+    "scope": "xml",
+    "prefix": "env-set",
+    "description": "sets an environment variable",
+    "body": [
+      "<set_env name=\"${1}\" value=\"${2:$(var ${3:NAME})}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-env-set-con": {
+    "scope": "xml",
+    "prefix": "env-set-con",
+    "description": "sets an environment variable with condition",
+    "body": [
+      "<set_env name=\"${1}\" value=\"${2:$(var ${3:NAME})}\" ${4|if,unless|}=\"${5:$(var ${6:NAME})}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-env-unset": {
+    "scope": "xml",
+    "prefix": "env-unset",
+    "description": "unsets an environment variable",
+    "body": [
+      "<unset_env name=\"${1}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-env-unset-con": {
+    "scope": "xml",
+    "prefix": "env-unset-con",
+    "description": "unsets an environment variable",
+    "body": [
+      "<unset_env name=\"${1}\" ${2|if,unless|}=\"${3:$(var ${4:NAME})}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-let": {
+    "scope": "xml",
+    "prefix": "let",
+    "description": "It’s a replacement of `arg` tag with a value attribute.",
+    "body": [
+      "<let name=\"${1}\" value=\"${2:$(var ${3:NAME})}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-let-con": {
+    "scope": "xml",
+    "prefix": "let-con",
+    "description": "let with condition",
+    "body": [
+      "<let name=\"${1}\" value=\"${2:$(var ${3:NAME})}\" ${4|if,unless|}=\"${5:$(var ${6:NAME})}\"/>\n$0",
+    ],
+  },
+  "ROS2 launch-param": {
+    "scope": "xml",
+    "prefix": "param",
+    "description": "param",
+    "body": "<param name=\"${1}\" value=\"${2:$(var ${3:NAME})}\"/>\n$0",
+  },
+  "ROS2 launch-param-list": {
+    "scope": "xml",
+    "prefix": "param-list",
+    "description": "param list",
+    "body": "<param name=\"${1}\" value=\"${2:$(var ${3:NAME})}\" value-sep=\"${4:,}\"/>\n$0",
+  },
+  "ROS2 launch-param-group": {
+    "scope": "xml",
+    "prefix": "param-group",
+    "description": "param group",
+    "body": [
+      "<param name=\"${2:group}\">",
+      "\t${0}",
+      "</param>"
+    ]
+  },
+  "ROS2 launch-param-yaml": {
+    "scope": "xml",
+    "prefix": "param-yaml",
+    "description": "Loads parameters from a yaml file",
+    "body": "<param from=\"${1:/path/to/file}\"/>\n$0",
+  },
+  "ROS2 launch-remap": {
+    "scope": "xml",
+    "prefix": "remap",
+    "description": "Used to pass remapping rules to a node. It can only be used within `node` tags",
+    "body": "<remap from=\"/${1}\" to=\"/${2}\"/>\n$0",
+  },
+}

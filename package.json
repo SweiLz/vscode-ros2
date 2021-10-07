@@ -1,0 +1,37 @@
+{
+  "name": "ros2-snippets",
+  "displayName": "ROS2 Snippets",
+  "description": "ROS2 (Robot Operating System 2) snippets",
+  "version": "1.0.0",
+  "publisher": "Liew Wuttipat",
+  "author": {
+    "name": "Liew Wuttipat"
+  },
+  "icon": "media/ros2-logo.jpg",
+  "keywords": [
+    "ros2",
+    "robot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SweiLz/ROS2-Snippets"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./snippets/ros2_launch_py.code-snippets"
+      },
+      {
+        "language": "xml",
+        "path": "./snippets/ros2_launch_xml.code-snippets"
+      }
+    ]
+  }
+}
