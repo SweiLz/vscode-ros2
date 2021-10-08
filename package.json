@@ -1,7 +1,7 @@
 {
-  "name": "ros2-snippets",
-  "displayName": "ROS2 Snippets",
-  "description": "ROS2 (Robot Operating System 2) snippets",
+  "name": "vscode-ros2",
+  "displayName": "ROS2",
+  "description": "Develop Robot Operating System 2(ROS2) with Visual Studio Code",
   "version": "1.0.0",
   "publisher": "Liew Wuttipat",
   "author": {
@@ -14,7 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SweiLz/ROS2-Snippets"
+    "url": "https://github.com/SweiLz/vscode-ros2"
+  },
+  "bugs": {
+    "url": "https://github.com/SweiLz/vscode-ros2/issues"
   },
   "engines": {
     "vscode": "^1.60.0"
